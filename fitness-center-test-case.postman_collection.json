@@ -1,0 +1,777 @@
+{
+	"info": {
+		"_postman_id": "010cbf7b-efe2-4912-b3fe-fa402dda6ed6",
+		"name": "fitness-center-test-case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18897050"
+	},
+	"item": [
+		{
+			"name": "authen & regist",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fadliyandra\",\n    \"email\": \"fadliyandra27.fy@gmail.com\",\n    \"password\": \"password\",\n    \"phoneNumber\": \"082387123063\",\n    \"creditCard\": {\n        \"placeholder\": \"fadliyandra\",\n        \"cardNumber\": \"9999999999999999\",\n        \"expiredDate\": \"12/2027\",\n        \"cvv\": \"787\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v3/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/refresh",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fadliyandra\",\n    \"email\": \"fadliyandra27.fy@gmail.com\",\n    \"password\": \"password\",\n    \"phoneNumber\": \"082387123063\",\n    \"creditCard\": {\n        \"placeholder\": \"fadliyandra\",\n        \"cardNumber\": \"9999999999999999\",\n        \"expiredDate\": \"12/2027\",\n        \"cvv\": \"787\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v3/auth/verify-registration?username=fadliyandra27.fy@gmail.com&otp_code=888802",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"verify-registration"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "fadliyandra27.fy@gmail.com"
+								},
+								{
+									"key": "otp_code",
+									"value": "888802"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v3/auth/forget-password?email=fadliyandra27.fy@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"forget-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "fadliyandra27.fy@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"password\",\n    \"newPassword\": \"passwordbaru\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v3/auth/reset-password/fadliyandra27.fy@gmail.com?otp_code=744829",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"reset-password",
+								"fadliyandra27.fy@gmail.com"
+							],
+							"query": [
+								{
+									"key": "otp_code",
+									"value": "744829"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"fadliyandra27.fy@gmail.com\",\n    \"password\": \"passwordbaru\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v3/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v3/auth/sign-out",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"sign-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "program",
+			"item": [
+				{
+					"name": "exercises",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"host": [
+										"rrk",
+										"server",
+										"local"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"host": [
+										"rrk",
+										"server",
+										"local"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create new",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"excercise\": \"pushup\",\n    \"description\": \"10X set 1 5X set 2\",\n    \"duration\": \"01:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"host": [
+										"rrk",
+										"server",
+										"local"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List of program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2NjYyODMxLCJpYXQiOjE2OTY2NTkyMzEsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.JalP2BtkloprVNUfMMsjyLIbpYxdobSRZ54eADjMHLU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/health-programs",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"health-programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0MDg3ODcsImlhdCI6MTY5ODQwNTE4NywiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.XqDkfou7aO_Uja4gkCAaJ7GNgs3vuPuseSgTlzlot8Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWRsaXlhbmRyYTI3LmZ5QGdtYWlsLmNvbSIsImV4cCI6MTY5ODQ4MDM3MywiaWF0IjoxNjk4MzkzOTczfQ.LdZdnTZhbhx_QLJ7CywYVHpsCZNIo-HOXXCeve5BW7M\"",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nameOfProgram\": \"Overweight & Obesity\",\n    \"price\": 200000,\n    \"schedule\": \"27-10-2023 19:15:00 WIB\",\n    \"totalMeeting\": 20,\n    \"programDetails\": [\n        {\n            \"exercise\": \"run treadmill\",\n            \"description\": \"treadmill di lakukan dengan kecepatan konstant\",\n            \"duration\": \"30:00\"\n        },\n        {\n            \"exercise\": \"sepeda statis\",\n            \"description\": \"menggunakan sepeda statis dengan kecepatan konstant\",\n            \"duration\": \"30:00\"\n        },\n        {\n            \"exercise\": \"bridges\",\n            \"description\": \"gerakan di lakukan 20 kali\",\n            \"duration\": \"30:00\"\n        }\n        \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v1/health-programs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"health-programs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member",
+			"item": [
+				{
+					"name": "get all members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/v1/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check status registration Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/v1/members/registration-status?email=fadliyandra27.fy@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"registration-status"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "fadliyandra27.fy@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"passwordbaru\",\n    \"newPassword\": \"passwordchange\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v1/members/69d6596b-b333-4fa9-8796-fd26b4dc288e/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"69d6596b-b333-4fa9-8796-fd26b4dc288e",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update member info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"creditCard\": {\n        \"placeholder\": \"Fadli Yandra  Update\",\n        \"cardNumber\": \"8888888888888888\",\n        \"expiredDate\": \"20/2027\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v1/members/69d6596b-b333-4fa9-8796-fd26b4dc288e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"69d6596b-b333-4fa9-8796-fd26b4dc288e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscrip",
+			"item": [
+				{
+					"name": "gett all subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/v1/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subscription member Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyN0BnbWFpbC5jb20iLCJleHAiOjE2OTg3NjczMzEsImlhdCI6MTY5ODc2MzczMSwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.ryq7VNLhwlle8SOLquKTk1xgPZ0SiUBZoeaAscCwhew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"memberId\": \"51a09fb7-f08d-4262-8c04-0a083c01c28d\",\n    \"healthProgramId\": \"e9b20158-e5db-4430-b206-00e5d393c837\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v1/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check payment status by subscription id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentStatus\": \"unpaid\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v1/subscriptions/98f334e3-5601-4f46-a804-20c62e5f4cec/payment-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions",
+								"98f334e3-5601-4f46-a804-20c62e5f4cec",
+								"payment-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "canceled subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"healthProgramId\": \"e9b20158-e5db-4430-b206-00e5d393c837\",\n    \"subscriptionId\": \"98f334e3-5601-4f46-a804-20c62e5f4cec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/v1/subscriptions/member/69d6596b-b333-4fa9-8796-fd26b4dc288e/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions",
+								"member",
+								"69d6596b-b333-4fa9-8796-fd26b4dc288e",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment-message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0Mjc2NDYsImlhdCI6MTY5ODQyNDA0NiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.AWWeV9kzCjdYxmhdplKJ7SGCt4mZ1y7kAbeyb6hKDog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creditCard\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9095/api/v2/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"api",
+						"v2",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
