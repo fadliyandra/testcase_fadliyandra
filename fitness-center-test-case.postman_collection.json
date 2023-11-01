@@ -42,17 +42,28 @@
 				},
 				{
 					"name": "refresh token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "rrk.server.local:9090/api/v3/auth/refresh",
+							"raw": "http://localhost:9095/api/v3/auth/refresh",
+							"protocol": "http",
 							"host": [
-								"rrk",
-								"server",
-								"local"
+								"localhost"
 							],
-							"port": "9090",
+							"port": "9095",
 							"path": [
 								"api",
 								"v3",
@@ -260,35 +271,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"raw": "http://localhost:9095/api/v1/exercises",
+									"protocol": "http",
 									"host": [
-										"rrk",
-										"server",
-										"local"
+										"localhost"
 									],
-									"port": "9090",
-									"path": [
-										"api",
-										"v1",
-										"exercises"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "find by id",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "rrk.server.local:9090/api/v1/exercises",
-									"host": [
-										"rrk",
-										"server",
-										"local"
-									],
-									"port": "9090",
+									"port": "9095",
 									"path": [
 										"api",
 										"v1",
@@ -305,7 +293,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"excercise\": \"pushup\",\n    \"description\": \"10X set 1 5X set 2\",\n    \"duration\": \"01:00\"\n}",
+									"raw": "{\n    \"excercise\": \"long run\",\n    \"description\": \"long run once a week\",\n    \"duration\": \"03:00\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -313,13 +301,12 @@
 									}
 								},
 								"url": {
-									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"raw": "http://localhost:9095/api/v1/exercises",
+									"protocol": "http",
 									"host": [
-										"rrk",
-										"server",
-										"local"
+										"localhost"
 									],
-									"port": "9090",
+									"port": "9095",
 									"path": [
 										"api",
 										"v1",
@@ -339,7 +326,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2NjYyODMxLCJpYXQiOjE2OTY2NTkyMzEsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.JalP2BtkloprVNUfMMsjyLIbpYxdobSRZ54eADjMHLU",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoiZmFkbGl5YW5kcmEyNy5meUBnbWFpbC5jb20iLCJleHAiOjE2OTg0MTU1NDIsImlhdCI6MTY5ODQxMTk0MiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.zP_kSgBdFLz_6D88pOeLjXQpBRZQEmGjfz8Xuxk-hEk",
 									"type": "string"
 								}
 							]
@@ -347,13 +334,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "rrk.server.local:9090/api/v1/health-programs",
+							"raw": "http://localhost:9095/api/v1/health-programs",
+							"protocol": "http",
 							"host": [
-								"rrk",
-								"server",
-								"local"
+								"localhost"
 							],
-							"port": "9090",
+							"port": "9095",
 							"path": [
 								"api",
 								"v1",
